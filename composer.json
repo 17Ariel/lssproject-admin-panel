@@ -1,5 +1,6 @@
 {
   "require": {
-    "parse/php-sdk" : "1.4.*"
+    "parse/php-sdk" : "1.4.*",
+    "dompdf":"1.2.1"
   }
 }
