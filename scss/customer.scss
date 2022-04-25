@@ -1,0 +1,323 @@
+@import "./variables";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $family;
+  background: $bg-light;
+}
+a {
+  text-decoration: none;
+}
+.sidenav {
+  position: $fi;
+  height: 100%;
+  width: 260px;
+  background: $bg-white;
+  box-shadow: $shadow-md;
+  z-index: 1;
+  .ul {
+    margin-top: 70px;
+    a {
+      color: $bg-dark;
+      display: block;
+      line-height: 60px;
+      padding-left: 80px;
+      text-decoration: $n;
+      margin-bottom: 3px;
+      &:hover {
+        color: $bg-white;
+        background-color: $bg-danger;
+      }
+    }
+    .active {
+      display: block;
+      line-height: 60px;
+      padding-left: 80px;
+      text-decoration: $n;
+      margin-bottom: 3px;
+      color: $bg-white;
+      background-color: $bg-danger;
+    }
+    i {
+      position: relative;
+      top: 6px;
+      right: 4px;
+    }
+  }
+  .admin {
+    height: 70px;
+    width: 80px;
+    top: 30px;
+    left: 96px;
+    position: $re;
+    color: $bg-dark;
+    i {
+      font-size: 3rem;
+      position: relative;
+      left: 10px;
+    }
+  }
+}
+.top {
+  display: $b;
+  width: 100%;
+  height: 4rem;
+  background-color: $bg-danger;
+  box-shadow: $shadow-sm;
+  position: $fi;
+}
+h2 {
+  padding: 90px 0 0 290px;
+}
+
+.card {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  top: 91px;
+  left: 294px;
+  margin-bottom: 10px;
+  .body {
+    .tag {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      h3 {
+        color: $bg-danger;
+      }
+    }
+  }
+}
+.wrapper,
+.sub {
+  box-shadow: $shadow-sm;
+  padding: 10px 6px;
+  border-left: 6px solid $bg-danger;
+}
+.wrapper {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #fff;
+}
+
+#sideclose {
+  position: absolute;
+  left: -300px;
+}
+#menu {
+  position: absolute;
+  top: 20px;
+  left: -250px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.modal-admin {
+  position: $fi;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  width: 100%;
+  top: -2000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+  form {
+    width: 400px;
+    height: 200px;
+    background-color: $bg-white;
+    display: $f;
+    flex-direction: $col;
+    header {
+      background-color: $bg-danger;
+      color: $bg-white;
+      h1 {
+        text-align: center;
+      }
+    }
+    .body {
+      display: $f;
+      flex-direction: $col;
+      margin-top: 20px;
+      input {
+        border: $bg-info 1px solid;
+        margin: 6px 26px 10px 26px;
+        padding: 11px 60px;
+        border-radius: 4px;
+        background: $bg-white;
+        font-weight: lighter;
+        font-size: 0.8rem;
+        font-family: $family;
+        &:focus {
+          outline: 2px solid $bg-danger;
+        }
+      }
+      .btn-wrap {
+        margin: 10px 98px 10px 96px;
+        display: flex;
+        flex-direction: row;
+        button {
+          padding: 10px 20px;
+          margin-left: 10px;
+          box-shadow: $shadow-sm;
+          outline: none;
+          color: $bg-light;
+          border: none;
+          border-radius: 4px;
+          font-family: $family;
+          cursor: pointer;
+          &:hover,
+          :focus {
+            box-shadow: $shadow-lg;
+          }
+        }
+      }
+    }
+  }
+}
+
+#confirm {
+  background-color: $bg-danger;
+}
+#cancelIn {
+  background-color: $bg-light;
+  color: $bg-dark;
+  box-shadow: $shadow-md;
+}
+
+.alert {
+  width: 100%;
+  position: $re;
+  top: 70px;
+  height: 4rem;
+  display: flex;
+  justify-content: $c;
+  align-items: $c;
+  span {
+    i {
+      position: relative;
+      top: 6px;
+      cursor: pointer;
+    }
+  }
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: $alert-danger;
+}
+
+@media screen and(max-width:$screen-lg) {
+}
+@media all and(max-width:909px) {
+  .card {
+    width: 376px;
+  }
+}
+@media all and(max-width:$screen-md) {
+  .card {
+    left: 280px;
+  }
+}
+@media all and(max-width:670px) {
+  .card {
+    left: 165px;
+  }
+  .sidenav {
+    transition-timing-function: $transition;
+    transition-duration: $s;
+    left: -1000px;
+  }
+  #sideclose {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-danger;
+  }
+  #menu {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-white;
+  }
+}
+@media all and(max-width:600px) {
+  .card {
+    left: 144px;
+  }
+}
+@media all and(max-width:578px) {
+  .card {
+    left: 112px;
+  }
+}
+@media all and(max-width:538px) {
+  .card {
+    left: 87px;
+  }
+}
+@media all and(max-width:512px) {
+  .card {
+    left: 39px;
+  }
+}
+@media screen and(max-width:$screen-sm) {
+  .sidenav {
+    transition-timing-function: $transition;
+    transition-duration: $s;
+    left: -1000px;
+  }
+  #sideclose {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-danger;
+  }
+  #menu {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-white;
+  }
+  .card {
+    left: 32px;
+    header {
+      h1 {
+        font-size: 21px;
+      }
+    }
+  }
+}
+@media screen and(max-width:375px) {
+  .card {
+    left: 32px;
+    width: 275px;
+  }
+}
+@media screen and(max-width:350px) {
+  .card {
+    left: 32px;
+    width: 255px;
+  }
+}
+
+@media screen and(max-width:298px) {
+  .card {
+    left: 20px;
+    width: 227px;
+  }
+}

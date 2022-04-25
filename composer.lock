@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "88d9c3c4e0bcfdbb23c4f60e8f7b328d",
+    "packages": [
+        {
+            "name": "parse/php-sdk",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parse-community/parse-php-sdk.git",
+                "reference": "19deeb473a33d9cc15271ef78f7520d95fa792ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parse-community/parse-php-sdk/zipball/19deeb473a33d9cc15271ef78f7520d95fa792ba",
+                "reference": "19deeb473a33d9cc15271ef78f7520d95fa792ba",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "jms/serializer": "1.7.1",
+                "phpdocumentor/phpdocumentor": "~2.9",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "^3.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Parse\\": "src/Parse/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Parse Platform License"
+            ],
+            "authors": [
+                {
+                    "name": "Parse",
+                    "homepage": "https://github.com/parse-community/parse-php-sdk/graphs/contributors"
+                }
+            ],
+            "description": "Parse PHP SDK",
+            "homepage": "https://github.com/parse-community/parse-php-sdk",
+            "keywords": [
+                "parse",
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/parse-community/parse-php-sdk/issues",
+                "source": "https://github.com/parse-community/parse-php-sdk/tree/master"
+            },
+            "time": "2017-12-06T03:42:42+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

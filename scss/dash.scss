@@ -1,0 +1,399 @@
+@import "./variables";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $family;
+  background: $bg-light;
+}
+a {
+  text-decoration: none;
+}
+.sidenav {
+  position: $fi;
+  height: 100%;
+  width: 260px;
+  background: $bg-white;
+  box-shadow: $shadow-md;
+  z-index: 1;
+  .ul {
+    margin-top: 70px;
+    a {
+      color: $bg-dark;
+      display: block;
+      line-height: 60px;
+      padding-left: 80px;
+      text-decoration: $n;
+      margin-bottom: 3px;
+      &:hover {
+        color: $bg-white;
+        background-color: $bg-danger;
+      }
+    }
+    .active {
+      display: block;
+      line-height: 60px;
+      padding-left: 80px;
+      text-decoration: $n;
+      margin-bottom: 3px;
+      color: $bg-white;
+      background-color: $bg-danger;
+    }
+    i {
+      position: relative;
+      top: 6px;
+      right: 4px;
+    }
+  }
+  .admin {
+    height: 70px;
+    width: 80px;
+    top: 30px;
+    left: 96px;
+    position: $re;
+    color: $bg-dark;
+    i {
+      font-size: 3rem;
+      position: relative;
+      left: 10px;
+    }
+  }
+}
+.top {
+  display: $b;
+  width: 100%;
+  height: 4rem;
+  background-color: $bg-danger;
+  box-shadow: $shadow-sm;
+  #btnout {
+    float: right;
+    color: $bg-white;
+    margin: 17px 10px 0 10px;
+    i {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    &:hover {
+      text-shadow: $shadow-lg;
+    }
+  }
+  h3 {
+    margin: 16px 0 16px 0;
+    float: right;
+    color: $bg-white;
+  }
+}
+
+#sideclose {
+  position: absolute;
+  left: -300px;
+}
+#menu {
+  position: absolute;
+  top: 20px;
+  left: -250px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.content-wrap {
+  display: $g;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-left: 290px;
+  margin-top: 40px;
+  margin-right: 30px;
+  column-gap: 10px;
+  row-gap: 10px;
+
+  .chart-sales {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    cursor: default;
+  }
+  .chart-orders {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    cursor: default;
+  }
+  .chart-stock {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    cursor: pointer;
+  }
+
+  .chart {
+    box-shadow: $shadow-sm;
+    background-color: $bg-white;
+    border-radius: 4px;
+    border-left: 6px solid $bg-danger;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    &:hover {
+      box-shadow: $shadow-lg;
+    }
+    i {
+      grid-row: 1/2;
+      grid-column: 2/3;
+      font-size: 5rem;
+      margin-top: 25px;
+      margin-left: 20px;
+      color: $bg-dark;
+    }
+    h3 {
+      grid-row: 1/2;
+      grid-column: 1/2;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      margin-left: 20px;
+      color: $bg-dark;
+    }
+    p {
+      grid-row: 2/3;
+      grid-column: 1/3;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      margin-left: 10px;
+      color: $bg-dark;
+    }
+  }
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+  width: 100%;
+  position: fixed;
+  top: -2000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+  form {
+    width: 500px;
+    height: 120px;
+    background-color: $bg-light;
+    display: $f;
+    flex-direction: $col;
+    border-radius: 4px;
+    .header {
+      display: $f;
+      flex-direction: $col;
+      justify-content: $c;
+      align-items: $c;
+      padding: 10px 0 0 0;
+      margin-bottom: 10px;
+    }
+    .body {
+      display: $f;
+      flex-direction: $r;
+      justify-content: $c;
+      align-items: $c;
+      padding: 0 0 10px 0;
+      button {
+        padding: 10px 20px;
+        color: $bg-dark;
+        background-color: $bg-white;
+        border: none;
+        border-radius: 4px;
+        font-family: $family;
+        cursor: pointer;
+        box-shadow: $shadow-sm;
+        margin: 2px 8px 0 8px;
+        &:hover,
+        :focus {
+          box-shadow: $shadow-lg;
+        }
+      }
+      #logout {
+        background-color: $bg-danger;
+        color: $bg-white;
+      }
+      #cancel {
+        background-color: $bg-white;
+      }
+    }
+  }
+}
+
+.modal-admin {
+  position: $fi;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  width: 100%;
+  top: -2000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+  form {
+    width: 400px;
+    height: 200px;
+    background-color: $bg-white;
+    display: $f;
+    flex-direction: $col;
+    header {
+      background-color: $bg-danger;
+      color: $bg-white;
+      h1 {
+        text-align: center;
+      }
+    }
+    .body {
+      display: $f;
+      flex-direction: $col;
+      margin-top: 20px;
+      input {
+        border: $bg-info 1px solid;
+        margin: 6px 26px 10px 26px;
+        padding: 11px 60px;
+        border-radius: 4px;
+        background: $bg-white;
+        font-size: 0.8rem;
+        font-family: $family;
+        &:focus {
+          outline: 2px solid $bg-danger;
+        }
+      }
+      .btn-wrap {
+        margin: 10px 98px 10px 96px;
+        display: flex;
+        flex-direction: row;
+        button {
+          padding: 10px 20px;
+          margin-left: 10px;
+          box-shadow: $shadow-sm;
+          outline: none;
+          color: $bg-light;
+          border: none;
+          border-radius: 4px;
+          font-family: $family;
+          cursor: pointer;
+          &:hover,
+          :focus {
+            box-shadow: $shadow-lg;
+          }
+        }
+      }
+    }
+  }
+}
+
+#confirm {
+  background-color: $bg-danger;
+}
+#cancelIn {
+  background-color: $bg-light;
+  color: $bg-dark;
+  box-shadow: $shadow-md;
+}
+.alert {
+  padding: 8px 12px 8px 12px;
+  margin-bottom: 10px;
+  text-align: center;
+  span {
+    i {
+      position: relative;
+      top: 6px;
+      cursor: pointer;
+    }
+  }
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: $alert-danger;
+}
+
+@media screen and(max-width:$screen-lg) {
+  .content-wrap {
+    margin-left: 290px;
+    .chart {
+      i {
+        font-size: 2rem;
+      }
+      h3,
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media all and(max-width:$screen-md) {
+  .content-wrap {
+    margin-left: 290px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-bottom: 30px;
+    .chart {
+      i {
+        font-size: 2.4rem;
+      }
+      h3,
+      p {
+        font-size: 1.5rem;
+      }
+    }
+    .chart-sales {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    .chart-orders {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .chart-stock {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+  }
+}
+@media screen and(max-width:$screen-sm) {
+  .sidenav {
+    transition-timing-function: $transition;
+    transition-duration: $s;
+    left: -1000px;
+  }
+  .content-wrap {
+    margin-left: 30px;
+  }
+  #sideclose {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-danger;
+  }
+  #menu {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-white;
+  }
+}
+
+@media screen and(max-width:380px) {
+  .modal {
+    form {
+      .header {
+        h2 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

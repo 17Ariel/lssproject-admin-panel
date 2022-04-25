@@ -1,0 +1,247 @@
+@import "./variables";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $family;
+  background: $bg-light;
+}
+a {
+  text-decoration: none;
+}
+.sidenav {
+  position: $fi;
+  height: 100%;
+  width: 260px;
+  background: $bg-white;
+  box-shadow: $shadow-md;
+  z-index: 2;
+  .ul {
+    margin-top: 70px;
+    a {
+      color: $bg-dark;
+      display: block;
+      line-height: 60px;
+      padding-left: 80px;
+      text-decoration: $n;
+      margin-bottom: 3px;
+      &:hover {
+        color: $bg-white;
+        background-color: $bg-danger;
+      }
+    }
+    .active {
+      display: block;
+      line-height: 60px;
+      padding-left: 80px;
+      text-decoration: $n;
+      margin-bottom: 3px;
+      color: $bg-white;
+      background-color: $bg-danger;
+    }
+    i {
+      position: relative;
+      top: 6px;
+      right: 4px;
+    }
+  }
+  .admin {
+    height: 70px;
+    width: 80px;
+    top: 30px;
+    left: 96px;
+    position: $re;
+    color: $bg-dark;
+    i {
+      font-size: 3rem;
+      position: relative;
+      left: 10px;
+    }
+  }
+}
+.top {
+  display: $b;
+  width: 100%;
+  height: 4rem;
+  background-color: $bg-danger;
+  box-shadow: $shadow-sm;
+  position: $fi;
+  z-index: 1;
+  a {
+    float: right;
+    color: $bg-white;
+    margin: 1.3rem 1rem 0 0;
+  }
+}
+
+#sideclose {
+  position: absolute;
+  left: -300px;
+}
+#menu {
+  position: absolute;
+  top: 20px;
+  left: -250px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+// table,th,td{
+//     border: none;
+//     border-spacing: 0;
+// }
+
+.details {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-left: 6px solid $bg-danger;
+  .body {
+    .tag {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+}
+.wrapper,
+#orderDetails {
+  box-shadow: $shadow-sm;
+  padding: 10px 6px;
+  background-color: $bg-white;
+}
+.card {
+  border-top: 2px solid $bg-light;
+  h1 {
+    font-size: 1.5em;
+    margin-left: 10px;
+  }
+}
+#orderDetails {
+  h1,
+  p {
+    margin-left: 10px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+}
+.modal {
+  display: $f;
+  flex-direction: $col;
+  padding: 90px 0 0 290px;
+  .content-wrap {
+    margin-bottom: 16px;
+    a {
+      text-decoration: $n;
+      background-color: $bg-danger;
+      color: $bg-white;
+      font-family: $family;
+      border-radius: 4px;
+      padding: 8px 10px;
+      box-shadow: $shadow-sm;
+      &:hover {
+        box-shadow: $shadow-sm;
+      }
+    }
+  }
+}
+
+@page {
+  size: auto;
+  margin: 0;
+}
+@media print {
+  body {
+    margin: 0;
+    text-align: center;
+    color: $bg-dark;
+    display: table;
+  }
+}
+
+@media screen and(max-width:$screen-lg) {
+}
+@media screen and(max-width:899px) {
+  .details {
+    width: 400px;
+  }
+}
+@media all and(max-width:$screen-md) {
+  .sidenav {
+    transition-timing-function: $transition;
+    transition-duration: $s;
+    left: -1000px;
+  }
+  #sideclose {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-danger;
+  }
+  #menu {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-white;
+  }
+  .modal {
+    padding-left: 30px;
+  }
+}
+@media screen and(max-width:$screen-sm) {
+  .sidenav {
+    transition-timing-function: $transition;
+    transition-duration: $s;
+    left: -1000px;
+  }
+  #sideclose {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-danger;
+  }
+  #menu {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-white;
+  }
+  .modal {
+    padding-left: 30px;
+  }
+}
+@media screen and(max-width:440px) {
+  .details {
+    width: 300px;
+  }
+}
+@media screen and(max-width:375px) {
+  .details {
+    width: 288px;
+  }
+}
+@media screen and(max-width:305px) {
+  header {
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+  .details {
+    h1 {
+      font-size: 1.4rem;
+    }
+    width: 210px;
+  }
+}

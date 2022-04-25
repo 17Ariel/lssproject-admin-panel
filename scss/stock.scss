@@ -1,0 +1,787 @@
+@import "./variables";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: $family;
+  background: $bg-light;
+}
+a {
+  text-decoration: none;
+}
+#searches {
+  margin-right: 10px;
+}
+
+.sidenav {
+  position: $fi;
+  height: 100%;
+  width: 260px;
+  background: $bg-white;
+  box-shadow: $shadow-md;
+  z-index: 2;
+  .ul {
+    margin-top: 70px;
+    a {
+      color: $bg-dark;
+      display: block;
+      line-height: 60px;
+      padding-left: 80px;
+      text-decoration: $n;
+      margin-bottom: 3px;
+      &:hover {
+        color: $bg-white;
+        background-color: $bg-danger;
+      }
+    }
+    .active {
+      display: block;
+      line-height: 60px;
+      padding-left: 80px;
+      text-decoration: $n;
+      margin-bottom: 3px;
+      color: $bg-white;
+      background-color: $bg-danger;
+    }
+    i {
+      position: relative;
+      top: 6px;
+      right: 4px;
+    }
+  }
+  .admin {
+    height: 70px;
+    width: 80px;
+    top: 30px;
+    left: 96px;
+    position: $re;
+    color: $bg-dark;
+    i {
+      font-size: 3rem;
+      position: relative;
+      left: 10px;
+    }
+  }
+}
+.top {
+  position: sticky;
+  top: 0;
+  display: $b;
+  position: $fi;
+  width: 100%;
+  height: 4rem;
+  background-color: $bg-danger;
+  box-shadow: $shadow-sm;
+  z-index: 1;
+  a {
+    text-decoration: none;
+    float: right;
+    i {
+      font-size: 2rem;
+      cursor: pointer;
+      color: $bg-white;
+      margin: 14px 16px 14px 0;
+      &:hover {
+        text-shadow: $shadow-lg;
+      }
+    }
+    span {
+      color: white;
+      position: relative;
+      bottom: 20px;
+      left: 45px;
+      font-weight: bold;
+      background: red;
+      border-radius: 50%;
+      padding: 0.5px 8px;
+    }
+  }
+  form {
+    float: right;
+    button {
+      padding: 6.5px 8px;
+      box-shadow: $shadow-sm;
+      outline: none;
+      color: $bg-dark;
+      background-color: $bg-white;
+      border: none;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      font-family: $family;
+      cursor: pointer;
+      position: relative;
+      top: 4px;
+      right: 6px;
+      background-color: $bg-danger;
+      &:hover,
+      :focus {
+        box-shadow: $shadow-lg;
+      }
+      i {
+        color: $bg-white;
+        position: relative;
+        top: 4px;
+      }
+    }
+    //     font-size: 2rem;
+    // cursor: pointer;
+    // color: #fff;
+    // margin: 14px 16px 14px 0;
+    input {
+      border: $bg-info 1px solid;
+      margin: 10px 2px 10px 26px;
+      padding: 11px 30px;
+      border-radius: 4px;
+      background: $bg-white;
+      box-shadow: $shadow-sm;
+      font-size: 0.8rem;
+      font-family: $family;
+      outline: $n;
+    }
+  }
+}
+#sideclose {
+  position: absolute;
+  left: -300px;
+}
+#menu {
+  position: absolute;
+  top: 20px;
+  left: -250px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+  position: fixed;
+  top: -3000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+  form {
+    width: 400px;
+    height: 580px;
+    background-color: $bg-light;
+    display: $f;
+    flex-direction: $col;
+    .header {
+      background-color: $bg-danger;
+      display: $f;
+      flex-direction: $r;
+      h1 {
+        margin-left: 90px;
+        color: $bg-white;
+      }
+      span {
+        #closeMod {
+          position: $re;
+          top: 14px;
+          left: 350px;
+          font-weight: bold;
+          cursor: pointer;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: $bg-white;
+        }
+      }
+    }
+    .body {
+      display: $f;
+      flex-direction: $col;
+      margin-top: 20px;
+      select {
+        border: $bg-info 1px solid;
+        margin: 10px 26px 10px 26px;
+        padding: 11px 60px;
+        border-radius: 4px;
+        background: $bg-white;
+        font-size: 0.8rem;
+        font-family: $family;
+        &:focus {
+          outline: 2px solid $bg-danger;
+        }
+      }
+      input {
+        border: $bg-info 1px solid;
+        margin: 10px 26px 10px 26px;
+        padding: 11px 60px;
+        border-radius: 4px;
+        background: $bg-white;
+        font-size: 0.8rem;
+        font-family: $family;
+        &:focus {
+          outline: 2px solid $bg-danger;
+        }
+      }
+      input[type="text"] {
+        padding: 10px 24px;
+      }
+      input[type="number"] {
+        padding: 10px 24px;
+      }
+      input[type="date"] {
+        // padding:10px 52px;
+        padding: 10px 38px;
+      }
+      button {
+        margin: 10px 26px 10px 26px;
+        padding: 10px 90px;
+        box-shadow: $shadow-md;
+        outline: none;
+        color: $bg-light;
+        background-color: $bg-danger;
+        border: none;
+        border-radius: 4px;
+        font-family: $family;
+        cursor: pointer;
+        &:hover,
+        :focus {
+          box-shadow: $shadow-lg;
+        }
+      }
+    }
+  }
+}
+#nothing {
+  display: $n;
+}
+.content-wrap {
+  display: $f;
+  flex-direction: $r;
+  padding: 60px 0 10px 290px;
+  justify-content: flex-start;
+  button {
+    font-family: $family;
+    padding: 10px 30px;
+    box-shadow: $shadow-sm;
+    outline: none;
+    background-color: $bg-danger;
+    color: $bg-white;
+    border: none;
+    font-weight: normal;
+    border-radius: 4px;
+    margin: 20px 14px 10px 0;
+    &:hover {
+      box-shadow: $shadow-lg;
+    }
+  }
+}
+table,
+th,
+td {
+  border: none;
+  border-spacing: 0;
+}
+#tbhistory {
+  padding: 112px 0 10px 290px;
+}
+.scroll-wrap {
+  margin-left: 290px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+table {
+  background-color: $bg-white;
+  box-shadow: $shadow-sm;
+  thead {
+    background-color: $bg-white;
+    color: $bg-dark;
+  }
+  tbody {
+    background: $bg-light;
+  }
+  th,
+  td {
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  tr:nth-child(even) {
+    background-color: $bg-white;
+  }
+}
+
+#edit,
+#delete,
+.add {
+  font-family: $family;
+  border: none;
+  box-shadow: $shadow-sm;
+  padding: 10px 10px;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 400;
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+}
+#modaldelete {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  position: fixed;
+  display: $g;
+  place-items: $c;
+  top: -2000px;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+  form {
+    width: 450px;
+    height: 220px;
+    background-color: $bg-white;
+    display: $f;
+    flex-direction: $col;
+    .header {
+      background-color: $bg-danger;
+      display: $f;
+      flex-direction: $r;
+      h1 {
+        margin-left: 90px;
+        color: $bg-white;
+      }
+      span {
+        #closeMod {
+          position: $re;
+          top: 14px;
+          left: 350px;
+          font-weight: bold;
+          cursor: pointer;
+          font-size: 1.5rem;
+          cursor: pointer;
+          color: $bg-white;
+        }
+      }
+    }
+    .body {
+      display: $f;
+      flex-direction: $col;
+      margin-top: 20px;
+      input {
+        border: $bg-info 1px solid;
+        margin: 10px 26px 10px 26px;
+        padding: 11px 60px;
+        border-radius: 4px;
+        background: $bg-white;
+        font-size: 0.8rem;
+        font-family: $family;
+        &:focus {
+          // border:2px solid $bg-primary;
+          outline: 2px solid $bg-primary;
+        }
+      }
+      .btn-wrap {
+        display: $f;
+        flex-direction: $r;
+        margin: 0 40px 0 40px;
+      }
+      button {
+        margin: 10px 26px 10px 26px;
+        padding: 10px 40px;
+        box-shadow: $shadow-md;
+        outline: none;
+        color: $bg-light;
+        background-color: $bg-primary;
+        border: none;
+        border-radius: 4px;
+        font-family: $family;
+        cursor: pointer;
+        &:hover,
+        :focus {
+          box-shadow: $shadow-lg;
+        }
+      }
+      #deleted {
+        background-color: $bg-danger;
+      }
+      #cancel {
+        background-color: $bg-info;
+        color: $bg-dark;
+      }
+    }
+  }
+}
+#edit {
+  background-color: $bg-white;
+  color: $bg-dark;
+}
+#delete {
+  background-color: $bg-danger;
+  color: $bg-white;
+}
+.add {
+  background-color: $bg-white;
+  color: $bg-dark;
+  i {
+    position: relative;
+    top: 6px;
+  }
+}
+
+.modal-admin {
+  position: $fi;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  width: 100%;
+  top: -3000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+  form {
+    width: 400px;
+    height: 200px;
+    background-color: $bg-white;
+    display: $f;
+    flex-direction: $col;
+    header {
+      background-color: $bg-danger;
+      color: $bg-white;
+      h1 {
+        text-align: center;
+      }
+    }
+    .body {
+      display: $f;
+      flex-direction: $col;
+      margin-top: 20px;
+      input {
+        border: $bg-info 1px solid;
+        margin: 6px 26px 10px 26px;
+        padding: 11px 60px;
+        border-radius: 4px;
+        background: $bg-white;
+        font-size: 0.8rem;
+        font-family: $family;
+        &:focus {
+          outline: 2px solid $bg-danger;
+        }
+      }
+      .btn-wrap {
+        margin: 10px 98px 10px 96px;
+        display: flex;
+        flex-direction: row;
+        button {
+          padding: 10px 20px;
+          margin-left: 10px;
+          box-shadow: $shadow-sm;
+          outline: none;
+          color: $bg-light;
+          border: none;
+          border-radius: 4px;
+          font-family: $family;
+          cursor: pointer;
+          &:hover,
+          :focus {
+            box-shadow: $shadow-lg;
+          }
+        }
+      }
+    }
+  }
+}
+
+#notifytb {
+  margin-top: 35px;
+}
+#confirm {
+  background-color: $bg-danger;
+}
+#cancelIn {
+  background-color: $bg-light;
+  color: $bg-dark;
+  box-shadow: $shadow-md;
+}
+.addModal {
+  position: $fi;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  width: 100%;
+  top: -3000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+  form {
+    width: 400px;
+    height: 200px;
+    background-color: $bg-white;
+    display: $f;
+    flex-direction: $col;
+    header {
+      background-color: $bg-danger;
+      color: $bg-white;
+      h1 {
+        text-align: center;
+      }
+    }
+    .body {
+      display: $f;
+      flex-direction: $col;
+      margin-top: 20px;
+      input {
+        border: $bg-info 1px solid;
+        margin: 6px 26px 10px 26px;
+        padding: 11px 60px;
+        border-radius: 4px;
+        background: $bg-white;
+        font-size: 0.8rem;
+        font-family: $family;
+        &:focus {
+          outline: 2px solid $bg-danger;
+        }
+      }
+      .btn-wrap {
+        margin: 10px 98px 10px 96px;
+        display: flex;
+        flex-direction: row;
+        button {
+          padding: 10px 20px;
+          margin-left: 10px;
+          box-shadow: $shadow-sm;
+          outline: none;
+          color: $bg-light;
+          border: none;
+          border-radius: 4px;
+          font-family: $family;
+          cursor: pointer;
+          &:hover,
+          :focus {
+            box-shadow: $shadow-lg;
+          }
+        }
+      }
+    }
+  }
+}
+#confirmadd {
+  background-color: $bg-danger;
+}
+#canceladd {
+  background-color: $bg-light;
+  color: $bg-dark;
+  box-shadow: $shadow-md;
+}
+.alert {
+  width: 100%;
+  position: $re;
+  top: 70px;
+  height: 4rem;
+  display: flex;
+  justify-content: $c;
+  align-items: $c;
+  span {
+    i {
+      position: relative;
+      top: 3px;
+      left: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+.alert-success {
+  background-color: $alert-success;
+  color: $success;
+}
+.alert-danger {
+  background-color: $danger;
+  color: $alert-danger;
+}
+.alert-warning {
+  background-color: $warning;
+  color: $alert-warning;
+}
+
+#history {
+  background: $bg-white;
+  padding: 6px 10px;
+  margin: 20px 10px 10px 0;
+  box-shadow: $shadow-sm;
+  border-radius: 4px;
+  color: $bg-danger;
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+}
+#added {
+  background: $bg-white;
+  padding: 6px 10px;
+  margin: 20px 10px 10px 0;
+  box-shadow: $shadow-sm;
+  border-radius: 4px;
+  color: $bg-danger;
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+}
+#new {
+  background: $bg-danger;
+  padding: 6px 10px;
+  margin: 20px 10px 10px 0;
+  box-shadow: $shadow-sm;
+  border-radius: 4px;
+  i {
+    position: relative;
+    top: 3px;
+    color: $bg-white;
+  }
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+}
+#report {
+  background: $bg-danger;
+  color: $bg-white;
+  position: relative;
+  bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  box-shadow: $shadow-sm;
+  cursor: pointer;
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+}
+// #tbhistory {
+//   padding: 112px 0 10px 290px;
+// }
+
+.total-wrapper {
+  background: $bg-white;
+  padding: 8px 12px;
+  border: 1px solid $bg-danger;
+  border-radius: 4px;
+  width: 200px;
+  position: relative;
+  bottom: 48px;
+  left: 72px;
+}
+
+#outOfstock {
+  background: $bg-danger;
+  color: $bg-white;
+  position: relative;
+  bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  box-shadow: $shadow-sm;
+  cursor: pointer;
+  top: 30px;
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+}
+@media screen and(max-width:$screen-lg) {
+  #tbhistory {
+    width: 60%;
+  }
+}
+@media all and(max-width:$screen-md) {
+  #tbhistory {
+    width: 50%;
+  }
+  .scroll-wrap {
+    width: 50%;
+    overflow-x: scroll;
+  }
+}
+@media all and(max-width:606px) {
+  #tbhistory {
+    width: 40%;
+  }
+}
+@media screen and(max-width:$screen-sm) {
+  .sidenav {
+    transition-timing-function: $transition;
+    transition-duration: $s;
+    left: -1000px;
+  }
+  #sideclose {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-danger;
+  }
+  #menu {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: $bg-white;
+  }
+  .scroll-wrap,
+  #tbhistory {
+    margin-left: 30px;
+    width: 80%;
+  }
+  .content-wrap {
+    padding-left: 30px;
+  }
+  #tbhistory {
+    padding-left: 10px;
+  }
+  th,
+  td {
+    padding: 6px 4px;
+  }
+  .top {
+    form {
+      input {
+        padding: 11px 2px;
+      }
+    }
+  }
+}
+@media screen and(max-width:375px) {
+  .top {
+    height: 8rem;
+  }
+  .content-wrap {
+    padding-top: 124px;
+  }
+  #tbhistory {
+    padding-top: 154px;
+  }
+  .modal {
+    form {
+      width: 324px;
+      .header {
+        h1 {
+          margin-left: 53px;
+        }
+      }
+    }
+  }
+  .modal form .header span #closeMod {
+    left: 280px;
+  }
+}
+
+@media screen and(max-width:352px) {
+  #tbhistory {
+    padding-left: 2px;
+  }
+}
+@media screen and(max-width:336px) {
+  #tbhistory {
+    padding-left: 1px;
+  }
+}

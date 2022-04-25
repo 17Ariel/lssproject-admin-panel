@@ -1,0 +1,40 @@
+//colors
+$bg-primary:#A0C621;
+$bg-secondary:#e7dddd;
+$bg-danger:#FC736D;
+$bg-white:#fff;
+$bg-light:#f5f5f5;
+$bg-dark:#333;
+$bg-info:#ccc;
+$alert-danger: hsl(0, 89%, 71%);
+$alert-success:hsl(99, 55%, 80%);
+$alert-warning:hsl(39, 75%, 66%);
+$danger:#F8D7DA;
+$warning:#FFF3CD;
+$success:#13BB6C;
+//font-family
+$family: 'Poppins', sans-serif;
+//box-shadow
+$shadow-sm:0 4px 6px rgba(0,0,0,.2);
+$shadow-md:0 4px 6px rgba(0,0,0,.4);
+$shadow-lg:0 4px 6px rgba(0,0,0,.6);
+//flex
+$f:flex;
+$col:column;
+$r:row;
+$c:center;
+$w:wrap;
+//other positioning and display
+$g:grid;
+$re:relative;
+$a:absolute;
+$fi:fixed;
+$n:none;
+$b:block;
+
+$screen-lg:985px;
+$screen-md:756px;
+$screen-sm:490px;
+
+$transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+$s:.4s;

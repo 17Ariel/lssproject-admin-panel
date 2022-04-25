@@ -1,0 +1,113 @@
+@import "./variables";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: $family;
+    
+}
+
+.container{
+    height: 100vh;
+    display: $f;
+    align-items: $c;
+    justify-content: $c;
+    background-color: $bg-danger;
+}
+form{
+    height: 25.8rem;
+    width: 25rem;
+    background-color: $bg-white;
+    box-shadow: $shadow-sm;
+    border-radius: 4px;
+    display: $f;
+    flex-direction: column;
+    font-family: $family;
+    img{
+        width: 120px;
+        height: 100px;
+        align-self: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.form-group{
+    display: $f;
+    flex-direction: column;
+    input{
+        outline: $n;
+        border-radius: 4px;
+        padding:.6rem .4rem;
+        border:1px solid $bg-info;
+        margin: 20px 10px 0 10px;
+        font-family: $family;
+        &:focus{
+            border:1px solid $bg-danger;
+            outline: 1px solid $bg-danger;
+        }
+    }
+    button{
+        background-color: $bg-danger;
+        color: $bg-white;
+        border: none;
+        box-shadow: $shadow-sm;
+        font-family: $family;
+        padding: .8rem .6rem;
+        margin: 20px 10px 0 10px;
+        font-weight: 400;
+        font-size: 1rem;
+        border-radius: 4px;
+        box-shadow: $shadow-sm;
+        &:hover,
+        :focus{
+            box-shadow: $shadow-lg;
+        }
+    }
+}
+h1{
+    text-align: center;
+    font-family: $family;
+    margin-top: 40px;
+}
+
+.alert{
+    background:$danger;
+    padding: .5rem .5rem;
+    text-align: center;
+    margin: 4px 6px;
+    border-radius: 4px;
+    
+}
+.alert-danger{
+    color: $alert-danger;
+}
+i{
+    position: relative;
+    top: 6px;
+    right: 4px;
+}
+
+@media screen and(max-width:380px){
+    form{
+        height: 27rem;
+        width: 18rem;
+    }
+}
+
+@media screen and(max-width:300px){
+    form{
+        height: 27rem;
+        width: 16rem;
+    }
+}
+
+
+@media screen and(max-width:270px){
+    form{
+        height: 27rem;
+        width: 12rem;
+    }
+}
