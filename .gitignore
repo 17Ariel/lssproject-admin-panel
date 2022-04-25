@@ -1,3 +1,4 @@
 vendor
 parse-php-sdk
 dompdf
+config.php
